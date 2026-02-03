@@ -328,40 +328,44 @@ body {
 
 /* =========================
    MOBILE INTRO STACK FIX
+/* =========================
+   MOBILE INTRO + PLAY BUTTON FIX (FINAL)
 ========================= */
 
 @media screen and (max-width: 500px) {
 
-  /* Ensure intro text stays above everything */
+  /* Intro text stays readable */
   .one,
   .two {
     position: relative;
     z-index: 5;
+    padding: 0 20px;
   }
 
-  /* Push play button section lower on screen */
-  .container div.six {
-    top: 45vh;
-  }
-
-  /* Prevent play button from overlapping text */
-  .play-btn {
-    margin-top: 30px;
-  }
-
-  /* Slightly reduce intro text size for small screens */
   .one {
     font-size: 3rem;
   }
 
   .two {
     font-size: 1.05rem;
-    padding: 0 20px;
+    margin-top: 10px;
   }
 
-  /* Improve spacing for wish section */
-  .wish {
-    margin-top: 20px;
+  /* Play button section pinned to bottom */
+  .container div.six {
+    position: fixed;
+    top: auto;
+    bottom: env(safe-area-inset-bottom, 20px);
+    left: 0;
+    right: 0;
+    z-index: 4;
+    pointer-events: auto;
+  }
+
+  /* Center button nicely */
+  .play-btn {
+    margin: 20px auto 0;
+    display: block;
   }
 
   /* Keep animations smooth */
@@ -370,4 +374,5 @@ body {
     will-change: transform, opacity;
   }
 }
+
 
