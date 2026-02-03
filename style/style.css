@@ -323,56 +323,62 @@ body {
 }
 
 /* =========================
-   MOBILE FIXES
+   FINAL MOBILE FIX (CLEAN)
 ========================= */
 
-/* =========================
-   MOBILE INTRO STACK FIX
-/* =========================
-   MOBILE INTRO + PLAY BUTTON FIX (FINAL)
-========================= */
+.mobile-play-btn {
+  display: none;
+}
 
 @media screen and (max-width: 500px) {
 
-  /* Intro text stays readable */
-  .one,
-  .two {
-    position: relative;
-    z-index: 5;
-    padding: 0 20px;
-  }
-
-  .one {
-    font-size: 3rem;
-  }
-
-  .two {
-    font-size: 1.05rem;
-    margin-top: 10px;
-  }
-
-  /* Play button section pinned to bottom */
-  .container div.six {
+  /* MOBILE PLAY BUTTON — CENTERED */
+  .mobile-play-btn {
+    display: block;
     position: fixed;
-    top: auto;
-    bottom: env(safe-area-inset-bottom, 20px);
+    bottom: 28px;
+
     left: 0;
     right: 0;
-    z-index: 4;
-    pointer-events: auto;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 280px;
+    max-width: 85vw;
+
+    padding: 14px 0;
+    text-align: center;
+
+    z-index: 9999;
   }
 
-  /* Center button nicely */
-  .play-btn {
-    margin: 20px auto 0;
+  /* HIDE DESKTOP BUTTON ON MOBILE */
+  .six .play-btn {
+    display: none;
+  }
+
+  /* 🔴 DO NOT TOUCH OPACITY OF .six */
+  /* GSAP CONTROLS IT */
+
+  /* IMAGE SAFETY */
+  .girl-dp {
+    max-width: 80%;
+    height: auto;
     display: block;
+    margin: 0 auto 16px;
   }
 
-  /* Keep animations smooth */
-  .container,
-  .container > div {
-    will-change: transform, opacity;
+  /* TEXT SPACING */
+  .wish {
+    padding: 0 16px;
+    text-align: center;
+  }
+
+  .wish-hbd {
+    font-size: 1.8rem;
+  }
+
+  .wish h5 {
+    font-size: 1.2rem;
   }
 }
-
-
